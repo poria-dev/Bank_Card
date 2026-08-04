@@ -39,6 +39,13 @@ inpnumber.forEach((val, index) => {
 
     val.addEventListener("input", () => {
 
+        if (val.value.length >= 4) {
+            val.style.border = "1px solid green"
+        } else {
+            val.style.border = "1px solid red"
+
+        }
+
         inputbox()
 
         if (val.value.length == 4) {
@@ -56,6 +63,13 @@ inpnumber.forEach((val, index) => {
 
 cvv2input.addEventListener("input", () => {
     cvv2box.innerHTML = cvv2input.value
+
+    if (cvv2input.value.length >= 3) {
+        cvv2input.style.border = "1px solid green"
+    } else {
+        cvv2input.style.border = "1px solid red"
+
+    }
 
 })
 
@@ -78,7 +92,7 @@ yearsinput.addEventListener("input", () => {
     f = yearsinput.value
     // value for years ----
 
-   stringobject()
+    stringobject()
 
 })
 
@@ -118,6 +132,7 @@ btn.addEventListener("click", () => {
     } else {
         monthinput.style.border = "2px solid green"
         flag++
+
     } if (yearsinput.value.length < 2) {
         yearsinput.style.border = "2px solid red"
 
@@ -128,10 +143,22 @@ btn.addEventListener("click", () => {
     }
 
     if (flag >= 7) {
+
+        btn.setAttribute("disabled", "disabled")
+
+
+
+        cvv2input.classList.add("bg", "pointer")
+        monthinput.classList.add("bg", "pointer")
+        yearsinput.classList.add("bg", "pointer")
+
+        inpnumber.forEach((val) => {
+            val.classList.add("bg", "pointer")
+        })
+
         setTimeout(() => {
             alert("رمز پویا ارسال شد ")
         }, 500);
-
 
 
         let x = setInterval(() => {
@@ -160,20 +187,34 @@ btn.addEventListener("click", () => {
                 timer = 60
 
                 alert("اگه هنوز رمز دوم دریافت نکردید ئوباره تلاش کنید")
+
                 cvv2input.value = ""
                 monthinput.value = ""
                 yearsinput.value = ""
+
+                cvv2input.style.border = "1px solid red"
+                monthinput.style.border = "1px solid red"
+                yearsinput.style.border = "1px solid red"
+
                 btn.removeAttribute("disabled")
 
+                cvv2input.classList.remove("bg", "pointer")
+                monthinput.classList.remove("bg", "pointer")
+                yearsinput.classList.remove("bg", "pointer")
+
+                inpnumber.forEach((val) => {
+                    val.classList.remove("bg", "pointer")
+                })
             }
 
-        }, 1000);
+        }, 700);
 
     }
 
 })
 
 
+// create function for about conditional in arrow years and mouth ....
 
 function stringobject(e) {
 

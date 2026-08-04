@@ -24,7 +24,6 @@
     --color-slate-400: oklch(70.4% 0.04 256.788);
     --color-slate-700: oklch(37.2% 0.044 257.287);
     --color-slate-800: oklch(27.9% 0.041 260.031);
-    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
@@ -824,6 +823,9 @@
 }
 .pointer {
   pointer-events: none;
+}
+.bg {
+  background-color: rgba(208, 204, 204, 0.698);
 }
 @property --tw-translate-x {
   syntax: "*";

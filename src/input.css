@@ -5,3 +5,7 @@
 .pointer{
     pointer-events: none;
 }
+
+.bg{
+    background-color: rgba(208, 204, 204, 0.698);
+}
