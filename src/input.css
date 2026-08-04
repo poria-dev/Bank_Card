@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+
+
+.pointer{
+    pointer-events: none;
+}
