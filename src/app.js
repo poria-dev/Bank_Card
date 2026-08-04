@@ -7,8 +7,10 @@ const inpnumber = document.querySelectorAll(".inp")
 const cvv2input = document.getElementById("cvv2input")
 const monthinput = document.getElementById("monthinput")
 const yearsinput = document.getElementById("yearsinput")
-const btn = document.getElementById("btn")
 const check = document.getElementById("check")
+const otpInputs = document.querySelectorAll(".otp-inp")
+const submitOtpBtn = document.getElementById("submitOtp")
+
 
 let f = ''
 let timer = 60
@@ -64,9 +66,9 @@ inpnumber.forEach((val, index) => {
     val.addEventListener("input", () => {
 
         if (val.value.length >= 4) {
-            val.style.border = "1px solid green"
+            val.style.border = "2px solid #22c55e"
         } else {
-            val.style.border = "1px solid red"
+            val.style.border = "2px solid #ef4444"
 
         }
 
@@ -89,9 +91,9 @@ cvv2input.addEventListener("input", () => {
     cvv2box.innerHTML = cvv2input.value
 
     if (cvv2input.value.length >= 3) {
-        cvv2input.style.border = "1px solid green"
+        cvv2input.style.border = "2px solid #22c55e"
     } else {
-        cvv2input.style.border = "1px solid red"
+        cvv2input.style.border = "2px solid #ef4444"
 
     }
 
@@ -117,123 +119,6 @@ yearsinput.addEventListener("input", () => {
     // value for years ----
 
     stringobject()
-
-})
-
-
-btn.addEventListener("click", () => {
-
-
-    let flag = 0
-
-    inpnumber.forEach((val) => {
-
-        if (val.value.length < 4) {
-
-            val.style.border = "1px solid red"
-
-        } else {
-
-            val.style.border = "1px solid green"
-            flag++
-
-        }
-
-    })
-
-    if (cvv2input.value.length < 3) {
-
-        cvv2input.style.border = "1px solid red"
-
-    } else {
-        cvv2input.style.border = "1px solid green"
-        flag++
-    }
-
-    if (monthinput.value.length < 2) {
-        monthinput.style.border = "2px solid red"
-
-    } else {
-        monthinput.style.border = "2px solid green"
-        flag++
-
-    } if (yearsinput.value.length < 2) {
-        yearsinput.style.border = "2px solid red"
-
-    } else {
-
-        yearsinput.style.border = "2px solid green"
-        flag++
-    }
-
-    if (flag >= 7) {
-
-        btn.setAttribute("disabled", "disabled")
-
-
-
-        cvv2input.classList.add("bg", "pointer")
-        monthinput.classList.add("bg", "pointer")
-        yearsinput.classList.add("bg", "pointer")
-
-        inpnumber.forEach((val) => {
-            val.classList.add("bg", "pointer")
-        })
-
-        setTimeout(() => {
-            alert("رمز پویا ارسال شد ")
-        }, 500);
-
-
-        let x = setInterval(() => {
-            timer--
-            btn.innerHTML = timer
-
-            if (timer == 0) {
-                clearInterval(x)
-                btn.innerHTML = `   <span class="relative flex justify-center items-center gap-2">
-
-
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-
-                    <path d="M12 2L4 5V11C4 16.5 7.5 20 12 22C16.5 20 20 16.5 20 11V5L12 2Z" stroke="white" stroke-width="2"/>
-
-                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-
-                </svg>
-
-
-                پرداخت و تکمیل سفارش
-
-
-            </span>`
-
-                timer = 60
-
-                alert("اگه هنوز رمز دوم دریافت نکردید ئوباره تلاش کنید")
-
-                cvv2input.value = ""
-                monthinput.value = ""
-                yearsinput.value = ""
-
-                cvv2input.style.border = "1px solid red"
-                monthinput.style.border = "1px solid red"
-                yearsinput.style.border = "1px solid red"
-
-                btn.removeAttribute("disabled")
-
-                cvv2input.classList.remove("bg", "pointer")
-                monthinput.classList.remove("bg", "pointer")
-                yearsinput.classList.remove("bg", "pointer")
-
-                inpnumber.forEach((val) => {
-                    val.classList.remove("bg", "pointer")
-                })
-            }
-
-        }, 700);
-
-    }
 
 })
 
@@ -272,3 +157,212 @@ check.addEventListener("click", () => {
     }
 
 })
+
+
+function showToast(type, title, text) {
+
+    const toast = document.getElementById("toast")
+    const box = document.getElementById("toastBox")
+    const icon = document.getElementById("toastIcon")
+    const progress = document.getElementById("toastProgress")
+
+    document.getElementById("toastTitle").innerHTML = title
+    document.getElementById("toastText").innerHTML = text
+
+    progress.style.transition = "none"
+    progress.style.width = "100%"
+
+    if (type == "success") {
+
+        icon.innerHTML = `
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" fill="#16A34A"/>
+        <path d="M8 12.5L10.8 15.2L16.5 9.5"
+        stroke="white"
+        stroke-width="2.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+        </svg>`
+
+        icon.className =
+            "w-14 h-14 rounded-2xl flex justify-center items-center bg-green-100"
+
+        progress.className =
+            "h-full bg-gradient-to-r from-green-500 to-emerald-400"
+
+    }
+
+    if (type == "error") {
+
+        icon.innerHTML = `
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" fill="#DC2626"/>
+        <path d="M15.5 8.5L8.5 15.5M8.5 8.5L15.5 15.5"
+        stroke="white"
+        stroke-width="2.3"
+        stroke-linecap="round"/>
+        </svg>`
+
+        icon.className =
+            "w-14 h-14 rounded-2xl flex justify-center items-center bg-red-100"
+
+        progress.className =
+            "h-full bg-gradient-to-r from-red-500 to-rose-400"
+
+    }
+
+    if (type == "info") {
+
+        icon.innerHTML = `
+        <svg width="30" height="30" fill="none" viewBox="0 0 24 24">
+
+        <circle cx="12" cy="12" r="10" fill="#2563EB"/>
+
+        <path d="M12 8V8.1M12 11V16"
+        stroke="white"
+        stroke-width="2.2"
+        stroke-linecap="round"/>
+
+        </svg>`
+
+        icon.className =
+            "w-14 h-14 rounded-2xl flex justify-center items-center bg-blue-100"
+
+        progress.className =
+            "h-full bg-gradient-to-r from-blue-600 to-cyan-400"
+
+    }
+
+    toast.classList.remove("translate-x-[450px]", "opacity-0")
+
+    toast.classList.add("translate-x-0", "opacity-100")
+
+    setTimeout(() => {
+
+        progress.style.transition = "4s linear"
+        progress.style.width = "0%"
+
+    }, 50)
+
+    setTimeout(() => {
+
+        toast.classList.remove("translate-x-0", "opacity-100")
+        toast.classList.add("translate-x-[450px]", "opacity-0")
+
+    }, 4000)
+
+}
+
+
+otpInputs.forEach((input, index) => {
+
+    input.addEventListener("input", (e) => {
+        
+        let value = e.target.value;
+        
+        if (!/^\d*$/.test(value)) {
+            input.value = "";
+            return;
+        }
+
+        if (value.length === 1 && index < otpInputs.length - 1) {
+            otpInputs[index + 1].focus();
+        }
+    });
+
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && !input.value && index > 0) {
+            otpInputs[index - 1].focus();
+        }
+    });
+
+});
+
+
+submitOtpBtn.addEventListener("click", () => {
+
+    let flag = 0
+
+    inpnumber.forEach((val) => {
+
+        if (val.value.length < 4) {
+
+            val.style.border = "2px solid #ef4444"
+
+        } else {
+
+            val.style.border = "2px solid #22c55e"
+            flag++
+
+        }
+
+    })
+
+    if (cvv2input.value.length < 3) {
+
+        cvv2input.style.border = "2px solid #ef4444"
+
+    } else {
+        cvv2input.style.border = "2px solid #22c55e"
+        flag++
+    }
+
+    if (monthinput.value.length < 2) {
+        monthinput.style.border = "2px solid #ef4444"
+
+    } else {
+        monthinput.style.border = "2px solid #22c55e"
+        flag++
+
+    } if (yearsinput.value.length < 2) {
+        yearsinput.style.border = "2px solid #ef4444"
+
+    } else {
+
+        yearsinput.style.border = "2px solid #22c55e"
+        flag++
+    }
+
+    let otpValid = true
+    otpInputs.forEach(inp => {
+        if (inp.value.length === 1) {
+            inp.style.border = "2px solid #22c55e"
+        } else {
+            inp.style.border = "2px solid #ef4444"
+            otpValid = false
+        }
+    })
+
+    if (!otpValid) {
+        showToast("error", "خطا در رمز پویا", "لطفاً رمز پویای ۵ رقمی را به درستی وارد کنید.")
+        return
+    } else {
+        flag++
+    }
+
+    if (flag >= 8) {
+
+        submitOtpBtn.setAttribute("disabled", "disabled")
+        submitOtpBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> در حال پردازش ...`
+
+        setTimeout(() => {
+            showToast(
+                "success",
+                "تراکنش موفق",
+                "پرداخت شما با موفقیت انجام شد. در حال انتقال به صفحه فروشنده..."
+            )
+            submitOtpBtn.innerHTML = `<i class="fa-solid fa-check"></i> پرداخت موفق`
+            submitOtpBtn.classList.remove("bg-blue-600", "hover:bg-blue-700")
+            submitOtpBtn.classList.add("bg-green-500")
+        }, 1500);
+
+        setTimeout(() => {
+            location.reload()
+        }, 6000);
+
+    } else {
+        showToast("error", "اطلاعات ناقص", "لطفاً تمامی فیلدهای کارت بانکی و رمز پویا را تکمیل کنید.")
+    }
+
+})
+

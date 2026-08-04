@@ -1,431 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>درگاه پرداخت امن</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="input.css">
     <link rel="stylesheet" href="output.css">
-
+    <style>
+        input, .card-number-display { font-family: Tahoma, sans-serif !important; }
+        input { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important; }
+        .sec { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .otp-inp { font-family: Tahoma, sans-serif !important; }
+    </style>
 </head>
 
-<body dir="rtl" class="h-screen overflow-hidden bg-gradient-to-br from-slate-100 via-white to-sky-100">
+<body class="min-h-screen overflow-y-auto bg-slate-100 flex flex-col items-center justify-start p-4">
 
-<section class="sec w-[95%] sm:w-[90%] lg:w-[720px] h-[96vh] mx-auto my-[2vh] rounded-[32px] overflow-hidden border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,.12)] *:w-full *:flex *:flex-wrap">
+<section class="sec w-[95%] sm:w-[420px] lg:w-[600px] bg-white rounded-2xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 flex flex-col">
 
-    <!-- about title --> 
-
-    <div class="boxtitle justify-center items-center py-5 px-6 *:w-full *:text-center">
-
-        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 flex justify-center items-center mx-auto shadow-xl">
-
-            <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
-
-                <rect x="2" y="5" width="20" height="14" rx="3" fill="white"/>
-
-                <path d="M2 10H22" stroke="#2563EB" stroke-width="2"/>
-
-                <rect x="6" y="14" width="5" height="2" rx="1" fill="#2563EB"/>
-
-            </svg>
-
+    <div class="w-full bg-slate-50 border-b border-slate-100 px-5 py-4 lg:py-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-600 rounded-xl flex justify-center items-center">
+                <i class="fa-solid fa-shield-halved text-white text-sm"></i>
+            </div>
+            <div>
+                <h2 class="font-bold text-sm text-slate-800">درگاه پرداخت امن</h2>
+                <span class="text-[11px] text-slate-400">پرداخت با رمز پویا</span>
+            </div>
         </div>
-
-        <h2 class="font-black text-3xl lg:text-4xl text-slate-800 mt-3">
-            درگاه پرداخت امن
-        </h2>
-
-        <span class="opacity-60 text-base lg:text-lg mt-1">
-            اطلاعات کارت بانکی خود را وارد کنید
-        </span>
-
+        <div class="text-left flex flex-col items-end">
+            <span class="text-[10px] text-slate-400">مبلغ قابل پرداخت</span>
+            <span class="font-black text-lg text-slate-800">۱,۲۵۰,۰۰۰ <span class="text-[10px] font-bold text-slate-400">تومان</span></span>
+        </div>
     </div>
 
-    <!-- about title -->
-
-
-
-
-
-
-
-<div class="boxcard flex justify-center items-center py-4">
-
-<div class="card relative w-[90%] h-[230px] rounded-[30px] overflow-hidden bg-gradient-to-br from-[#071A52] via-[#0F52D9] to-[#27B8FF] shadow-[0_25px_60px_rgba(0,0,0,.35)]">
-
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,.18),transparent_35%)]"></div>
-
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,.12),transparent_40%)]"></div>
-
-<div class="absolute -top-20 -left-16 w-60 h-60 rounded-full bg-white/10 blur-3xl"></div>
-
-<div class="absolute -bottom-24 -right-14 w-56 h-56 rounded-full bg-cyan-300/20 blur-3xl"></div>
-
-<div class="absolute inset-0 opacity-[.08]" style="background-image:linear-gradient(90deg,white 1px,transparent 1px),linear-gradient(white 1px,transparent 1px);background-size:35px 35px;"></div>
-
-<div class="absolute top-6 right-7 flex items-center gap-3">
-
-<div class="w-11 h-11 rounded-full bg-red-600 flex justify-center items-center shadow-lg">
-
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" class="w-6 h-6">
-
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18M3 12h18"/>
-
-</svg>
-
-</div>
-
-<div>
-
-<h3 class="text-white font-black text-xl tracking-wide">BlueBank</h3>
-
-<p class="text-blue-100 text-[11px] tracking-[4px] uppercase">Digital Banking</p>
-
-</div>
-
-</div>
-
-<div class="absolute top-[78px] left-7">
-
-<svg width="72" height="56" viewBox="0 0 72 56">
-
-<rect width="72" height="56" rx="8" fill="#F6C453"/>
-
-<rect x="11" y="9" width="50" height="38" rx="4" fill="#E3AF33"/>
-
-<path d="M25 9V47M47 9V47M11 28H61" stroke="#C38C18" stroke-width="2"/>
-
-</svg>
-
-</div>
-
-<div class="absolute top-[90px] left-[112px]">
-
-<svg width="35" height="35" fill="none" viewBox="0 0 24 24">
-
-<path d="M7 8c2 2 2 6 0 8M11 5c4 4 4 10 0 14M15 2c6 6 6 14 0 20" stroke="white" stroke-width="2" stroke-linecap="round"/>
-
-</svg>
-
-</div>
-
-<div class="absolute top-8 left-8">
-
-<svg width="62" height="38" viewBox="0 0 60 40">
-
-<circle cx="22" cy="20" r="14" fill="#EA001B"/>
-
-<circle cx="38" cy="20" r="14" fill="#F79E1B" fill-opacity=".92"/>
-
-</svg>
-
-</div>
-
-<!-- box number card -->
-
-<h3 id="text_card" class="absolute left-1/2 -translate-x-1/2 top-[118px] text-white font-black text-[20px] lg:text-[30px] tracking-[7px] whitespace-nowrap drop-shadow-lg">
-
-</h3>
-
-<!-- box number card -->
-
-<div class="absolute bottom-7 left-7 flex flex-col">
-
-<span class="text-[10px] tracking-[3px] text-white/60 uppercase">CVV2</span>
-
-<!-- boxcvv2 -->
-<h4 id="cvv2" class="text-white font-bold text-xl"></h4>
-<!-- boxcvv2 -->
-
-</div>
-
-<div class="absolute bottom-7 right-7 flex flex-col items-end">
-
-<span class="text-[10px] tracking-[3px] text-white/60 uppercase">VALID THRU</span>
-
-<!-- boxyears -->
-
-<h4 id="years" class="text-white font-bold text-xl"></h4>
-
-<!-- boxyears -->
-
-</div>
-
-<div class="absolute bottom-0 left-0 w-full h-[5px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-</div>
-
-</div>
-
-        <!-- box input -->
-
-    <div class="boxinput w-full flex my-2 px-6">
-
-        <div class="title w-full py-2">
-
-            <h6 class="font-black text-slate-800 text-xl flex items-center gap-2">
-
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-
-                    <rect x="2" y="5" width="20" height="14" rx="2" stroke="#2563EB" stroke-width="2"/>
-
-                    <path d="M2 10H22" stroke="#2563EB" stroke-width="2"/>
-
-                </svg>
-
-                شماره کارت
-
-            </h6>
-
-        </div>
-
-
-
-        <!-- input number -->
-
-
-        <div class="inputs w-full py-2 my-1 flex justify-between gap-2 *:border *:border-slate-200 *:bg-slate-50 *:outline-none *:rounded-xl *:text-center *:font-black *:text-xl *:text-slate-700 *:py-3 *:transition-all *:duration-300 *:focus:bg-white *:focus:border-blue-500 *:focus:shadow-[0_0_0_5px_rgba(37,99,235,.12)] *:w-1/5">
-
-            <input type="text" maxlength="4" class="inp">
-
-            <input type="text" maxlength="4" class="inp">
-
-            <input type="text" maxlength="4" class="inp">
-
-            <input type="text" maxlength="4" class="inp">
-
-        </div>
-
-
-        <!-- input number -->
-
-
-    </div>
-
-    <!-- box input -->
-
-
-
-
-
-
-
-    <!-- box cvv2 and years -->
-
-
-    <div class="inputcvv2_years w-full flex my-2 px-6 *:flex flex-wrap">
-
-
-        <div class="title2 w-full flex justify-between">
-
-
-            <h4 class="w-1/3 font-black text-slate-800 text-base flex items-center gap-2">
-
-
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-
-                    <path d="M12 2L4 6V12C4 17 7.5 20.5 12 22C16.5 20.5 20 17 20 12V6L12 2Z" stroke="#2563EB" stroke-width="2"/>
-
-                </svg>
-
-
-                cvv2
-
-
-            </h4>
-
-
-
-            <h4 class="w-2/3 font-black text-slate-800 text-base flex items-center gap-2 justify-end">
-
-
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-
-                    <rect x="3" y="4" width="18" height="18" rx="2" stroke="#2563EB" stroke-width="2"/>
-
-                    <path d="M8 2V6M16 2V6M3 10H21" stroke="#2563EB" stroke-width="2"/>
-
-                </svg>
-
-
-                تاریخ انقضا
-
-
-            </h4>
-
-
-        </div>
-
-
-
-
-
-
-        <div class="inputend my-3 w-full flex justify-between">
-
-
-            <!-- cvv2 -->
-
-
-            <div class="cvv2input w-1/3 flex">
-
-
-                <input type="text" maxlength="5" id="cvv2input" class="border border-slate-200 bg-slate-50 text-center text-xl font-black text-slate-700 outline-none focus:border-blue-500 focus:bg-white focus:shadow-[0_0_0_5px_rgba(37,99,235,.12)] py-3 w-full rounded-xl">
-
-
+    <div class="w-full flex justify-center items-center py-5 px-5 bg-white">
+        <div class="card relative w-full h-[190px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#38bdf8] shadow-lg shadow-blue-500/20">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,.15),transparent_50%)]"></div>
+            <div class="absolute -top-12 -left-12 w-32 h-32 rounded-full bg-white/10 blur-2xl"></div>
+            
+            <div class="absolute top-4 right-4 flex items-center gap-2 z-10">
+                <div class="w-9 h-9 rounded-full bg-yellow-500 flex justify-center items-center border-2 border-yellow-400/50">
+                    <i class="fa-solid fa-credit-card text-white text-xs"></i>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-sm" style="font-family: Tahoma;">BlueBank</h3>
+                    <p class="text-blue-200 text-[8px] tracking-[2px]">DIGITAL BANKING</p>
+                </div>
             </div>
 
-
-            <!-- cvv2 -->
-
-
-
-
-
-
-            <!-- years month -->
-
-
-            <div class="yearsinput w-2/3 flex justify-end items-center">
-
-
-                <input type="text" maxlength="2" id="monthinput" class="border border-slate-200 bg-slate-50 text-center text-xl font-black text-slate-700 outline-none focus:border-blue-500 focus:bg-white focus:shadow-[0_0_0_5px_rgba(37,99,235,.12)] py-3 w-[35%] rounded-xl">
-
-
-                <span class="flex justify-center items-center text-2xl font-black text-slate-400 w-[15%]">
-
-                    /
-
-                </span>
-
-
-                <input type="text" maxlength="2" id="yearsinput" class="border border-slate-200 bg-slate-50 text-center text-xl font-black text-slate-700 outline-none focus:border-blue-500 focus:bg-white focus:shadow-[0_0_0_5px_rgba(37,99,235,.12)] py-3 w-[35%] rounded-xl">
-
-
+            <div class="absolute top-4 left-4 z-10 opacity-80">
+                <div class="w-10 h-7 rounded bg-white/90 flex justify-center items-center">
+                    <svg width="24" height="16" viewBox="0 0 60 40"><circle cx="22" cy="20" r="14" fill="#EA001B"/><circle cx="38" cy="20" r="14" fill="#F79E1B" fill-opacity=".92"/></svg>
+                </div>
             </div>
 
+            <h3 id="text_card" class="card-number-display absolute left-1/2 -translate-x-1/2 top-[95px] text-white font-bold text-[19px] tracking-[4px] whitespace-nowrap z-10">
+                ---- ---- ---- ----
+            </h3>
 
-            <!-- years month -->
+            <div class="absolute bottom-4 left-4 flex flex-col z-10">
+                <span class="text-[8px] tracking-[2px] text-blue-200/60">CVV2</span>
+                <h4 id="cvv2" class="text-white font-bold text-base" style="font-family: Tahoma;">---</h4>
+            </div>
 
-
+            <div class="absolute bottom-4 right-4 flex flex-col items-end z-10">
+                <span class="text-[8px] tracking-[2px] text-blue-200/60">EXPIRE DATE</span>
+                <h4 id="years" class="text-white font-bold text-base" style="font-family: Tahoma;">--/--</h4>
+            </div>
+            
+            <div class="absolute top-[65px] left-4 w-[45px] h-[34px] rounded-md bg-gradient-to-br from-yellow-300 to-yellow-600 z-10 overflow-hidden flex justify-center items-center">
+                <div class="w-[75%] h-[75%] border border-yellow-700/30 rounded-sm"></div>
+            </div>
         </div>
-
-
     </div>
 
+    <div class="w-full flex flex-col px-5 pb-3">
+        <label class="text-xs font-bold text-slate-600 mb-2 flex items-center gap-1.5">
+            <i class="fa-regular fa-credit-card text-slate-400 text-xs"></i>
+            شماره کارت
+        </label>
+        <div class="inputs w-full flex justify-between gap-2">
+            <input type="text" maxlength="4" class="inp w-1/4 border border-slate-200 bg-slate-50 outline-none rounded-lg text-center font-bold text-lg text-slate-800 py-2.5 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10" placeholder="----">
+            <input type="text" maxlength="4" class="inp w-1/4 border border-slate-200 bg-slate-50 outline-none rounded-lg text-center font-bold text-lg text-slate-800 py-2.5 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10" placeholder="----">
+            <input type="text" maxlength="4" class="inp w-1/4 border border-slate-200 bg-slate-50 outline-none rounded-lg text-center font-bold text-lg text-slate-800 py-2.5 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10" placeholder="----">
+            <input type="text" maxlength="4" class="inp w-1/4 border border-slate-200 bg-slate-50 outline-none rounded-lg text-center font-bold text-lg text-slate-800 py-2.5 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10" placeholder="----">
+        </div>
+    </div>
 
-    <!-- box cvv2 and years -->
+    <div class="w-full flex flex-col px-5 py-3 gap-3">
+        <div class="w-full flex gap-3">
+            <div class="w-2/5 flex flex-col">
+                <label class="text-xs font-bold text-slate-600 mb-2 flex items-center gap-1.5">
+                    <i class="fa-solid fa-fingerprint text-slate-400 text-xs"></i>
+                    CVV2
+                </label>
+                <input type="password" maxlength="5" id="cvv2input" class="border border-slate-200 bg-slate-50 text-center text-lg font-bold text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 py-2.5 w-full rounded-lg tracking-widest" placeholder "***">
+            </div>
+            <div class="w-3/5 flex flex-col">
+                <label class="text-xs font-bold text-slate-600 mb-2 flex items-center gap-1.5 justify-end">
+                    تاریخ انقضا
+                    <i class="fa-regular fa-calendar text-slate-400 text-xs"></i>
+                </label>
+                <div class="w-full flex justify-end items-center gap-2">
+                    <input type="text" maxlength="2" id="monthinput" class="border border-slate-200 bg-slate-50 text-center text-lg font-bold text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 py-2.5 w-[45%] rounded-lg" placeholder="ماه">
+                    <span class="text-xl font-bold text-slate-300">/</span>
+                    <input type="text" maxlength="2" id="yearsinput" class="border border-slate-200 bg-slate-50 text-center text-lg font-bold text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 py-2.5 w-[45%] rounded-lg" placeholder="سال">
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- click -->
+    <div class="w-full bg-slate-50 border-t border-b border-slate-100 px-5 py-4 flex flex-col items-center gap-4">
+        <div class="w-full flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-100 rounded-lg flex justify-center items-center">
+                    <i class="fa-solid fa-mobile-screen-button text-blue-600 text-sm"></i>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-slate-700">رمز پویا (OTP)</p>
+                    <p class="text-[10px] text-slate-400">ارسال شده به **** ۴۳۲۱</p>
+                </div>
+            </div>
+            <button class="text-[11px] text-blue-600 font-bold hover:underline">ارسال مجدد</button>
+        </div>
+        
+        <div class="flex gap-2.5 justify-center" dir="ltr">
+            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+        </div>
 
-    <div class="click w-full flex justify-center items-center my-3 px-6">
-
-        <button id="btn" class="relative overflow-hidden w-full lg:w-[80%] bg-gradient-to-r from-blue-700 via-sky-600 to-cyan-500 text-white rounded-2xl font-black text-lg py-3 shadow-[0_15px_35px_rgba(37,99,235,.35)] cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-95">
-
-            <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full hover:translate-x-full transition-all duration-1000"></span>
-
-            <span class="relative flex justify-center items-center gap-2">
-
-
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-
-                    <path d="M12 2L4 5V11C4 16.5 7.5 20 12 22C16.5 20 20 16.5 20 11V5L12 2Z" stroke="white" stroke-width="2"/>
-
-                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-
-                </svg>
-
-
-                پرداخت و تکمیل سفارش
-
-
-            </span>
-
-
+        <button id="submitOtp" class="w-full bg-blue-600 text-white font-bold text-sm py-3 rounded-xl hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-lock text-xs"></i>
+            تایید و پرداخت
         </button>
-
-
     </div>
 
-
-    <!-- click -->
-
-
-
-
-
-
-
-    <!-- save -->
-
-
-    <div class="click w-full flex justify-center items-center mb-4 px-6">
-
-
-        <div class="w-full lg:w-[80%] flex justify-between items-center rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3">
-
-
+    <div class="w-full flex justify-center items-center py-4 lg:py-6 px-5">
+        <div class="w-full flex justify-between items-center">
             <div class="flex items-center">
-
-
-                <input type="checkbox" id="check" class="w-5 h-5 cursor-pointer accent-blue-600">
-
-
-                <p class="para text-center text-sm lg:text-base opacity-60 pr-3">
-
-                    با تایید اطلاعات شما ذخیره میشود
-
+                <input type="checkbox" id="check" class="w-4 h-4 cursor-pointer accent-blue-600 rounded">
+                <p class="text-center text-[11px] text-slate-400 pr-2">
+                    ذخیره شماره کارت
                 </p>
-
-
             </div>
-
-
-
-            <div class="hidden sm:flex items-center gap-2 text-slate-400">
-
-
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-
-
-                    <rect x="5" y="10" width="14" height="11" rx="2" stroke="#94A3B8" stroke-width="2"/>
-
-
-                    <path d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10" stroke="#94A3B8" stroke-width="2"/>
-
-
-                </svg>
-
-
-                <span class="text-xs">
-
-                    Secure
-
-                </span>
-
-
+            <div class="flex items-center gap-1.5 text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100">
+                <i class="fa-solid fa-shield-halved text-[10px]"></i>
+                <span class="text-[10px] font-bold">Secure SSL</span>
             </div>
-
-
         </div>
-
-
     </div>
-
-
-    <!-- save -->
-
-
 
 </section>
+
+<div id="toast" class="fixed top-5 right-5 z-[9999] translate-x-[450px] opacity-0 transition-all duration-500 ease-out">
+    <div id="toastBox" class="w-[340px] max-w-[92vw] rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-[0_20px_60px_rgba(0,0,0,.15)]">
+        <div class="flex items-center p-4">
+            <div id="toastIcon" class="w-12 h-12 rounded-xl flex justify-center items-center bg-green-100 flex-shrink-0"></div>
+            <div class="mr-3 flex-1">
+                <h3 id="toastTitle" class="font-bold text-slate-800 text-base"></h3>
+                <p id="toastText" class="text-xs text-slate-500 mt-1 leading-5"></p>
+            </div>
+        </div>
+        <div class="px-4 pb-3">
+            <div class="w-full h-[4px] rounded-full bg-slate-100 overflow-hidden">
+                <div id="toastProgress" class="h-full w-full bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400 origin-left"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="w-full bg-slate-100 flex justify-center items-center py-8 mt-8">
+
+    <div
+        class="w-[95%] sm:w-[600px] bg-white rounded-2xl border border-slate-200 shadow-sm px-5 py-6 flex flex-col items-center">
+
+        <!-- profile -->
+       <div class="w-32 h-32 rounded-full p-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 shadow-lg shadow-blue-200">
+
+         <img src="img/file_000000001a2481f4a0b43593d9131c72.jpg"
+        class="w-full h-full rounded-full object-cover border-4 border-white">
+
+        </div>
+
+
+        <h3 class="mt-3 text-lg font-black text-slate-800">
+            PORIA DEV
+        </h3>
+
+        <p class="text-xs text-slate-400 mt-1">
+            Front-End Developer
+        </p>
+
+
+
+        <!-- security -->
+        <div class="flex items-center gap-3 mt-5">
+
+            <div class="flex items-center gap-2 bg-emerald-50 border border-emerald-100 px-3 py-2 rounded-xl">
+
+                <i class="fa-solid fa-shield-halved text-emerald-600 text-sm"></i>
+
+                <span class="text-[11px] font-bold text-emerald-700">
+                    پرداخت امن SSL
+                </span>
+
+            </div>
+
+
+            <div class="flex items-center gap-2 bg-blue-50 border border-blue-100 px-3 py-2 rounded-xl">
+
+                <i class="fa-solid fa-lock text-blue-600 text-sm"></i>
+
+                <span class="text-[11px] font-bold text-blue-700">
+                    Secure Payment
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- links -->
+        <div class="flex gap-3 mt-5">
+
+
+            <a href="https://github.com/poria-dev"
+                target="_blank"
+                class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center hover:bg-slate-200 duration-300">
+
+                <i class="fa-brands fa-github text-slate-700"></i>
+
+            </a>
+
+
+
+            <a href="https://linkedin.com/in/pooria-rezaee"
+                target="_blank"
+                class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center hover:bg-blue-100 duration-300">
+
+                <i class="fa-brands fa-linkedin text-blue-600"></i>
+
+            </a>
+
+
+
+            <a href="https://t.me/pori_07"
+                target="_blank"
+                class="w-9 h-9 rounded-lg bg-sky-50 flex items-center justify-center hover:bg-sky-100 duration-300">
+
+                <i class="fa-brands fa-telegram text-sky-500"></i>
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="w-full border-t border-slate-100 mt-5 pt-4 text-center">
+
+            <p class="text-[11px] text-slate-400">
+                © 2026 Poria Dev • Secure Payment Gateway
+            </p>
+
+        </div>
+
+
+    </div>
+
+</footer>
 
 
 
 </body>
-
-
 <script src="app.js"></script>
-
-
 </html>
