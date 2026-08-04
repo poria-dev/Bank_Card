@@ -3,9 +3,7 @@
 const textnumber = document.getElementById("text_card")
 const cvv2box = document.getElementById("cvv2")
 const yearsbox = document.getElementById("years")
-
 const inpnumber = document.querySelectorAll(".inp")
-
 const cvv2input = document.getElementById("cvv2input")
 const monthinput = document.getElementById("monthinput")
 const yearsinput = document.getElementById("yearsinput")
@@ -14,15 +12,41 @@ const check = document.getElementById("check")
 
 let f = ''
 let timer = 60
+let arr = []
 
 // selects --------------
 
 
+// onload ....
 
+
+let testy = localStorage.getItem("inp")
+let checkcvv2 = localStorage.getItem("cvv2")
+if (checkcvv2) {
+
+    cvv2input.value = checkcvv2
+    cvv2box.innerHTML = checkcvv2
+
+}
+
+if (testy) {
+
+    inpnumber[0].value = testy[0] + testy[1] + testy[2] + testy[3]
+    inpnumber[1].value = testy[4] + testy[5] + testy[6] + testy[7]
+    inpnumber[2].value = testy[8] + testy[9] + testy[10] + testy[11]
+    inpnumber[3].value = testy[12] + testy[13] + testy[14] + testy[15]
+
+    textnumber.innerHTML = testy
+
+}
+
+// onload .........
 
 function inputbox(e) {
 
     let i = []
+
+
 
     i.push(inpnumber[0].value)
     i.push(inpnumber[1].value)
@@ -223,3 +247,28 @@ function stringobject(e) {
     yearsbox.innerHTML = arr.join("/")
 
 }
+
+
+
+check.addEventListener("click", () => {
+
+    if (check.checked == true) {
+
+
+        arr.push(inpnumber[0].value)
+        arr.push(inpnumber[1].value)
+        arr.push(inpnumber[2].value)
+        arr.push(inpnumber[3].value)
+
+        localStorage.setItem("inp", arr.join(""))
+        localStorage.setItem("cvv2", cvv2input.value)
+
+
+    } else {
+
+        localStorage.removeItem("inp")
+        localStorage.removeItem("cvv2")
+
+    }
+
+})
