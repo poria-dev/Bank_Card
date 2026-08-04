@@ -33,7 +33,7 @@ https://poria-dev.github.io/Bank-card-payment-gateway/src
 ## 📸 Preview
 
 <p align="center">
-<img src="./img/demo.png" width="850">
+<img src="a.jpg" width="850">
 </p>
 
 
