@@ -2,284 +2,1037 @@
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>درگاه پرداخت امن</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="input.css">
-    <link rel="stylesheet" href="output.css">
-    <style>
-        input, .card-number-display { font-family: Tahoma, sans-serif !important; }
-        input { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important; }
-        .sec { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .otp-inp { font-family: Tahoma, sans-serif !important; }
-    </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Premium Payment Gateway</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="output.css">
+
 </head>
 
-<body class="min-h-screen overflow-y-auto bg-slate-100 flex flex-col items-center justify-start p-4">
 
-<section class="sec w-[95%] sm:w-[420px] lg:w-[600px] bg-white rounded-2xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 flex flex-col">
+<body class="min-h-screen bg-[#f5f2ed] flex justify-center items-start py-5 px-3 overflow-x-hidden">
 
-    <div class="w-full bg-slate-50 border-b border-slate-100 px-5 py-4 lg:py-6 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-blue-600 rounded-xl flex justify-center items-center">
-                <i class="fa-solid fa-shield-halved text-white text-sm"></i>
-            </div>
-            <div>
-                <h2 class="font-bold text-sm text-slate-800">درگاه پرداخت امن</h2>
-                <span class="text-[11px] text-slate-400">پرداخت با رمز پویا</span>
-            </div>
-        </div>
-        <div class="text-left flex flex-col items-end">
-            <span class="text-[10px] text-slate-400">مبلغ قابل پرداخت</span>
-            <span class="font-black text-lg text-slate-800">۱,۲۵۰,۰۰۰ <span class="text-[10px] font-bold text-slate-400">تومان</span></span>
-        </div>
-    </div>
 
-    <div class="w-full flex justify-center items-center py-5 px-5 bg-white">
-        <div class="card relative w-full h-[190px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#38bdf8] shadow-lg shadow-blue-500/20">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,.15),transparent_50%)]"></div>
-            <div class="absolute -top-12 -left-12 w-32 h-32 rounded-full bg-white/10 blur-2xl"></div>
-            
-            <div class="absolute top-4 right-4 flex items-center gap-2 z-10">
-                <div class="w-9 h-9 rounded-full bg-yellow-500 flex justify-center items-center border-2 border-yellow-400/50">
-                    <i class="fa-solid fa-credit-card text-white text-xs"></i>
-                </div>
-                <div>
-                    <h3 class="text-white font-bold text-sm" style="font-family: Tahoma;">BlueBank</h3>
-                    <p class="text-blue-200 text-[8px] tracking-[2px]">DIGITAL BANKING</p>
-                </div>
-            </div>
+<section class="sec w-full max-w-[430px] lg:max-w-[520px] bg-white rounded-[34px] overflow-hidden border border-stone-200 shadow-[0_30px_90px_rgba(60,45,30,.12)]">
 
-            <div class="absolute top-4 left-4 z-10 opacity-80">
-                <div class="w-10 h-7 rounded bg-white/90 flex justify-center items-center">
-                    <svg width="24" height="16" viewBox="0 0 60 40"><circle cx="22" cy="20" r="14" fill="#EA001B"/><circle cx="38" cy="20" r="14" fill="#F79E1B" fill-opacity=".92"/></svg>
-                </div>
-            </div>
 
-            <h3 id="text_card" class="card-number-display absolute left-1/2 -translate-x-1/2 top-[95px] text-white font-bold text-[19px] tracking-[4px] whitespace-nowrap z-10">
-                ---- ---- ---- ----
-            </h3>
 
-            <div class="absolute bottom-4 left-4 flex flex-col z-10">
-                <span class="text-[8px] tracking-[2px] text-blue-200/60">CVV2</span>
-                <h4 id="cvv2" class="text-white font-bold text-base" style="font-family: Tahoma;">---</h4>
-            </div>
+<div class="relative overflow-hidden bg-gradient-to-br from-[#2b241e] via-[#5b4a3e] to-[#b69b7b] px-6 pt-7 pb-9">
 
-            <div class="absolute bottom-4 right-4 flex flex-col items-end z-10">
-                <span class="text-[8px] tracking-[2px] text-blue-200/60">EXPIRE DATE</span>
-                <h4 id="years" class="text-white font-bold text-base" style="font-family: Tahoma;">--/--</h4>
-            </div>
-            
-            <div class="absolute top-[65px] left-4 w-[45px] h-[34px] rounded-md bg-gradient-to-br from-yellow-300 to-yellow-600 z-10 overflow-hidden flex justify-center items-center">
-                <div class="w-[75%] h-[75%] border border-yellow-700/30 rounded-sm"></div>
-            </div>
-        </div>
-    </div>
 
-    <div class="w-full flex flex-col px-5 pb-3">
-        <label class="text-xs font-bold text-slate-600 mb-2 flex items-center gap-1.5">
-            <i class="fa-regular fa-credit-card text-slate-400 text-xs"></i>
-            شماره کارت
-        </label>
-        <div class="inputs w-full flex justify-between gap-2">
-            <input type="text" maxlength="4" class="inp w-1/4 border border-slate-200 bg-slate-50 outline-none rounded-lg text-center font-bold text-lg text-slate-800 py-2.5 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10" placeholder="----">
-            <input type="text" maxlength="4" class="inp w-1/4 border border-slate-200 bg-slate-50 outline-none rounded-lg text-center font-bold text-lg text-slate-800 py-2.5 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10" placeholder="----">
-            <input type="text" maxlength="4" class="inp w-1/4 border border-slate-200 bg-slate-50 outline-none rounded-lg text-center font-bold text-lg text-slate-800 py-2.5 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10" placeholder="----">
-            <input type="text" maxlength="4" class="inp w-1/4 border border-slate-200 bg-slate-50 outline-none rounded-lg text-center font-bold text-lg text-slate-800 py-2.5 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10" placeholder="----">
-        </div>
-    </div>
+<div class="absolute -top-20 -left-20 w-60 h-60 rounded-full bg-white/10 blur-3xl"></div>
 
-    <div class="w-full flex flex-col px-5 py-3 gap-3">
-        <div class="w-full flex gap-3">
-            <div class="w-2/5 flex flex-col">
-                <label class="text-xs font-bold text-slate-600 mb-2 flex items-center gap-1.5">
-                    <i class="fa-solid fa-fingerprint text-slate-400 text-xs"></i>
-                    CVV2
-                </label>
-                <input type="password" maxlength="5" id="cvv2input" class="border border-slate-200 bg-slate-50 text-center text-lg font-bold text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 py-2.5 w-full rounded-lg tracking-widest" placeholder "***">
-            </div>
-            <div class="w-3/5 flex flex-col">
-                <label class="text-xs font-bold text-slate-600 mb-2 flex items-center gap-1.5 justify-end">
-                    تاریخ انقضا
-                    <i class="fa-regular fa-calendar text-slate-400 text-xs"></i>
-                </label>
-                <div class="w-full flex justify-end items-center gap-2">
-                    <input type="text" maxlength="2" id="monthinput" class="border border-slate-200 bg-slate-50 text-center text-lg font-bold text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 py-2.5 w-[45%] rounded-lg" placeholder="ماه">
-                    <span class="text-xl font-bold text-slate-300">/</span>
-                    <input type="text" maxlength="2" id="yearsinput" class="border border-slate-200 bg-slate-50 text-center text-lg font-bold text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 py-2.5 w-[45%] rounded-lg" placeholder="سال">
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="w-full bg-slate-50 border-t border-b border-slate-100 px-5 py-4 flex flex-col items-center gap-4">
-        <div class="w-full flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-blue-100 rounded-lg flex justify-center items-center">
-                    <i class="fa-solid fa-mobile-screen-button text-blue-600 text-sm"></i>
-                </div>
-                <div>
-                    <p class="text-xs font-bold text-slate-700">رمز پویا (OTP)</p>
-                    <p class="text-[10px] text-slate-400">ارسال شده به **** ۴۳۲۱</p>
-                </div>
-            </div>
-            <button class="text-[11px] text-blue-600 font-bold hover:underline">ارسال مجدد</button>
-        </div>
-        
-        <div class="flex gap-2.5 justify-center" dir="ltr">
-            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
-            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
-            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
-            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
-            <input type="text" maxlength="1" class="otp-inp w-11 h-12 text-center text-xl font-bold border border-slate-200 bg-white rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
-        </div>
+<div class="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-amber-200/20 blur-3xl"></div>
 
-        <button id="submitOtp" class="w-full bg-blue-600 text-white font-bold text-sm py-3 rounded-xl hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2">
-            <i class="fa-solid fa-lock text-xs"></i>
-            تایید و پرداخت
-        </button>
-    </div>
 
-    <div class="w-full flex justify-center items-center py-4 lg:py-6 px-5">
-        <div class="w-full flex justify-between items-center">
-            <div class="flex items-center">
-                <input type="checkbox" id="check" class="w-4 h-4 cursor-pointer accent-blue-600 rounded">
-                <p class="text-center text-[11px] text-slate-400 pr-2">
-                    ذخیره شماره کارت
-                </p>
-            </div>
-            <div class="flex items-center gap-1.5 text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100">
-                <i class="fa-solid fa-shield-halved text-[10px]"></i>
-                <span class="text-[10px] font-bold">Secure SSL</span>
-            </div>
-        </div>
-    </div>
 
-</section>
+<div class="relative z-10 flex justify-between items-start">
 
-<div id="toast" class="fixed top-5 right-5 z-[9999] translate-x-[450px] opacity-0 transition-all duration-500 ease-out">
-    <div id="toastBox" class="w-[340px] max-w-[92vw] rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-[0_20px_60px_rgba(0,0,0,.15)]">
-        <div class="flex items-center p-4">
-            <div id="toastIcon" class="w-12 h-12 rounded-xl flex justify-center items-center bg-green-100 flex-shrink-0"></div>
-            <div class="mr-3 flex-1">
-                <h3 id="toastTitle" class="font-bold text-slate-800 text-base"></h3>
-                <p id="toastText" class="text-xs text-slate-500 mt-1 leading-5"></p>
-            </div>
-        </div>
-        <div class="px-4 pb-3">
-            <div class="w-full h-[4px] rounded-full bg-slate-100 overflow-hidden">
-                <div id="toastProgress" class="h-full w-full bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400 origin-left"></div>
-            </div>
-        </div>
-    </div>
+
+
+<div class="flex items-center gap-3">
+
+
+<div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 flex items-center justify-center">
+
+
+<i class="fa-solid fa-building-columns text-white text-xl"></i>
+
+
 </div>
 
-<footer class="w-full bg-slate-100 flex justify-center items-center py-8 mt-8">
-
-    <div
-        class="w-[95%] sm:w-[600px] bg-white rounded-2xl border border-slate-200 shadow-sm px-5 py-6 flex flex-col items-center">
-
-        <!-- profile -->
-       <div class="w-32 h-32 rounded-full p-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 shadow-lg shadow-blue-200">
-
-         <img src="img/file_000000001a2481f4a0b43593d9131c72.jpg"
-        class="w-full h-full rounded-full object-cover border-4 border-white">
-
-        </div>
-
-
-        <h3 class="mt-3 text-lg font-black text-slate-800">
-            PORIA DEV
-        </h3>
-
-        <p class="text-xs text-slate-400 mt-1">
-            Front-End Developer
-        </p>
 
 
 
-        <!-- security -->
-        <div class="flex items-center gap-3 mt-5">
-
-            <div class="flex items-center gap-2 bg-emerald-50 border border-emerald-100 px-3 py-2 rounded-xl">
-
-                <i class="fa-solid fa-shield-halved text-emerald-600 text-sm"></i>
-
-                <span class="text-[11px] font-bold text-emerald-700">
-                    پرداخت امن SSL
-                </span>
-
-            </div>
+<div>
 
 
-            <div class="flex items-center gap-2 bg-blue-50 border border-blue-100 px-3 py-2 rounded-xl">
+<h2 class="text-white font-black text-lg">
 
-                <i class="fa-solid fa-lock text-blue-600 text-sm"></i>
+درگاه پرداخت امن
 
-                <span class="text-[11px] font-bold text-blue-700">
-                    Secure Payment
-                </span>
+</h2>
 
-            </div>
 
-        </div>
+<p class="text-stone-200 text-xs mt-1">
+
+Premium Secure Payment
+
+</p>
+
+
+</div>
+
+
+</div>
 
 
 
-        <!-- links -->
-        <div class="flex gap-3 mt-5">
+
+<div class="text-left">
 
 
-            <a href="https://github.com/poria-dev"
-                target="_blank"
-                class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center hover:bg-slate-200 duration-300">
+<p class="text-stone-300 text-[11px]">
 
-                <i class="fa-brands fa-github text-slate-700"></i>
+مبلغ
 
-            </a>
+</p>
 
 
+<h3 class="text-white font-black text-xl">
 
-            <a href="https://linkedin.com/in/pooria-rezaee"
-                target="_blank"
-                class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center hover:bg-blue-100 duration-300">
+۱,۲۵۰,۰۰۰
 
-                <i class="fa-brands fa-linkedin text-blue-600"></i>
+<span class="text-xs">
 
-            </a>
+تومان
 
-
-
-            <a href="https://t.me/pori_07"
-                target="_blank"
-                class="w-9 h-9 rounded-lg bg-sky-50 flex items-center justify-center hover:bg-sky-100 duration-300">
-
-                <i class="fa-brands fa-telegram text-sky-500"></i>
-
-            </a>
+</span>
 
 
-        </div>
+</h3>
+
+
+</div>
+
+
+</div>
 
 
 
-        <div class="w-full border-t border-slate-100 mt-5 pt-4 text-center">
-
-            <p class="text-[11px] text-slate-400">
-                © 2026 Poria Dev • Secure Payment Gateway
-            </p>
-
-        </div>
 
 
-    </div>
+<div class="mt-8">
+
+
+<div class="card relative w-full h-[190px] rounded-[30px] overflow-hidden bg-gradient-to-br from-[#171513] via-[#3c332b] to-[#9b7b55] shadow-[0_25px_70px_rgba(0,0,0,.4)]">
+
+
+
+<div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/20"></div>
+
+
+<div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-amber-200/20 blur-3xl"></div>
+
+
+
+
+<div class="absolute top-5 right-5 flex items-center gap-3">
+
+
+<div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
+
+
+<i class="fa-solid fa-gem text-amber-200"></i>
+
+
+</div>
+
+
+
+<div>
+
+
+<h3 class="text-white font-black">
+
+Premium Card
+
+</h3>
+
+
+<p class="text-[9px] text-stone-300 tracking-[3px]">
+
+DIGITAL PAYMENT
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<div class="absolute top-5 left-5 w-14 h-10 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
+
+
+<svg width="36" height="24" viewBox="0 0 60 40">
+
+<circle cx="22" cy="20" r="14" fill="#EA001B"></circle>
+
+<circle cx="38" cy="20" r="14" fill="#F79E1B"></circle>
+
+</svg>
+
+
+</div>
+
+
+
+
+<div class="absolute top-[65px] left-6 w-[52px] h-[38px] rounded-xl bg-gradient-to-br from-yellow-100 via-yellow-400 to-yellow-700 shadow-lg">
+
+
+<div class="w-full h-full rounded-xl border-2 border-yellow-700/40"></div>
+
+
+</div>
+
+
+
+
+
+<h2 id="text_card"
+
+class="absolute top-[110px] left-1/2 -translate-x-1/2 text-white text-[19px] sm:text-[22px] font-black tracking-[4px] whitespace-nowrap drop-shadow-lg">
+
+
+---- ---- ---- ----
+
+
+</h2>
+
+
+
+
+
+<div class="absolute bottom-5 left-6">
+
+
+<p class="text-[10px] text-stone-300">
+
+CVV2
+
+</p>
+
+
+<h3 id="cvv2"
+
+class="text-white font-black text-base">
+
+---
+
+</h3>
+
+
+</div>
+
+
+
+
+
+<div class="absolute bottom-5 right-6 text-right">
+
+
+<p class="text-[10px] text-stone-300">
+
+EXPIRE DATE
+
+</p>
+
+
+<h3 id="years"
+
+class="text-white font-black text-base">
+
+--/--
+
+</h3>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="px-6 py-7 bg-white">
+
+
+<div>
+
+
+<label class="block text-[13px] font-black text-stone-700 mb-3">
+
+شماره کارت
+
+</label>
+
+
+
+
+<div class="flex gap-2" dir="ltr">
+
+
+<input type="text" maxlength="4" class="inp w-1/4 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
+
+
+<input type="text" maxlength="4" class="inp w-1/4 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
+
+
+<input type="text" maxlength="4" class="inp w-1/4 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
+
+
+<input type="text" maxlength="4" class="inp w-1/4 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="grid grid-cols-2 gap-4 mt-6">
+
+
+<div>
+
+
+<label class="block text-[13px] font-black text-stone-700 mb-3">
+
+CVV2
+
+</label>
+
+
+<input id="cvv2input"
+
+type="password"
+
+maxlength="4"
+
+class="w-full h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-xl tracking-[5px] font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300"
+
+placeholder="****">
+
+
+</div>
+
+
+
+<div>
+
+
+<label class="block text-[13px] font-black text-stone-700 mb-3">
+
+تاریخ انقضا
+
+</label>
+
+
+<div class="flex items-center gap-2">
+
+
+<input id="monthinput"
+
+maxlength="2"
+
+class="w-1/2 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center font-black outline-none focus:border-[#9b7b55]"
+
+placeholder="MM">
+
+
+<span class="font-black text-stone-400">
+
+/
+
+</span>
+
+
+<input id="yearsinput"
+
+maxlength="2"
+
+class="w-1/2 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center font-black outline-none focus:border-[#9b7b55]"
+
+placeholder="YY">
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="mt-6 rounded-[28px] border border-stone-200 bg-gradient-to-br from-[#faf8f5] to-[#f0ebe3] px-2 py-5">
+
+
+<div class="flex justify-between items-center">
+
+
+<div class="flex items-center gap-3">
+
+
+<div class="w-12 h-12 rounded-2xl bg-[#e9dfd1] flex justify-center items-center">
+
+
+<i class="fa-solid fa-shield-halved text-[#7b6042]"></i>
+
+
+</div>
+
+
+
+<div>
+
+
+<h3 class="font-black text-stone-800">
+
+تایید امنیت
+
+</h3>
+
+
+<p class="text-xs text-stone-500 mt-1">
+
+اطلاعات پرداخت محافظت شده است.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="mt-5">
+
+
+<label class="block text-[13px] font-black text-stone-700 mb-3">
+
+کد امنیتی
+
+</label>
+
+
+
+<div class="flex gap-2">
+
+
+<div id="captchaBox" class="w-[80px] lg:w-[120px] px-2 h-14 rounded-2xl bg-[#2b241e] border text-[15px] border-stone-300 flex items-center justify-center text-white font-black tracking-[5px]">
+
+
+A8K2P
+
+
+</div>
+
+
+
+
+<button id="captchaRefresh" class="w-12 lg:w-14 h-14 rounded-2xl bg-white border border-stone-200 flex items-center justify-center hover:bg-stone-100 duration-300">
+
+
+<i class="fa-solid fa-rotate-right text-[#7b6042] text-[10px]"></i>
+
+
+</button>
+
+
+
+
+
+<input type="text" id="captchaInput"
+
+class="flex-1 h-14 rounded-2xl border border-stone-200 bg-white text-center font-black outline-none focus:border-[#9b7b55]"
+
+placeholder="کد امنیتی">
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="mt-6">
+
+
+<label class="block text-[13px] font-black text-stone-700 mb-3">
+
+رمز دوم پویا
+
+</label>
+
+
+
+
+<div class="flex gap-2">
+
+
+<input id="otpInput" type="password"
+
+class="flex-1 h-14 rounded-2xl border border-stone-200 bg-white text-center text-lg font-black outline-none focus:border-[#9b7b55]"
+
+placeholder="رمز پویا">
+
+
+
+<button id="pas" class="min-w-[80px] lg:min-w-[120px] text-md lg:text-xl h-14 rounded-2xl bg-gradient-to-r from-[#4b3a2b] to-[#a5835c] text-white font-black shadow-lg active:scale-95 duration-300">
+
+
+دریافت رمز
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="mt-6 rounded-[28px] border border-stone-200 bg-white p-5">
+
+
+<div class="flex justify-between items-center">
+
+
+<div>
+
+
+<h3 class="font-black text-stone-800">
+
+پرداخت امن
+
+</h3>
+
+
+<p class="text-xs text-stone-500 mt-1">
+
+تراکنش با رمزنگاری انجام می‌شود.
+
+</p>
+
+
+</div>
+
+
+
+<div class="w-12 h-12 rounded-2xl bg-[#eee5d8] flex items-center justify-center">
+
+
+<i class="fa-solid fa-lock text-[#7b6042]"></i>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="grid grid-cols-3 gap-3 mt-5">
+
+
+<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center">
+
+
+<i class="fa-solid fa-fingerprint text-[#7b6042]"></i>
+
+
+<span class="text-[11px] font-black mt-2">
+
+Secure
+
+</span>
+
+
+</div>
+
+
+
+<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center">
+
+
+<i class="fa-solid fa-credit-card text-[#7b6042]"></i>
+
+
+<span class="text-[11px] font-black mt-2">
+
+Card
+
+</span>
+
+
+</div>
+
+
+
+<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center">
+
+
+<i class="fa-solid fa-lock text-[#7b6042]"></i>
+
+
+<span class="text-[11px] font-black mt-2">
+
+SSL
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="flex justify-between items-center mt-6">
+
+
+<div class="flex items-center gap-3">
+
+
+<input type="checkbox"
+
+id="check"
+
+class="w-5 h-5 accent-[#8b6b45] cursor-pointer">
+
+
+
+<label for="check"
+
+class="text-sm font-bold text-stone-700">
+
+
+ذخیره اطلاعات کارت
+
+
+</label>
+
+
+</div>
+
+
+
+
+
+<div class="px-3 py-2 rounded-xl bg-[#eee5d8] border border-stone-200">
+
+
+<span class="text-[11px] font-black text-[#7b6042]">
+
+PCI DSS
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<button id="submitOtp"
+
+class="w-full h-16 mt-7 rounded-[24px] bg-gradient-to-r from-[#332820] via-[#6b5238] to-[#b08b60] text-white text-lg font-black shadow-[0_20px_45px_rgba(100,75,45,.35)] active:scale-95 duration-300 flex items-center justify-center gap-3">
+
+
+<i class="fa-solid fa-lock"></i>
+
+
+پرداخت امن 
+
+
+</button>
+
+
+
+
+
+<div class="mt-7 rounded-[26px] border border-stone-200 bg-gradient-to-br from-white to-[#f6f1ea] p-5">
+
+
+<div class="flex items-center gap-3">
+
+
+<div class="w-12 h-12 rounded-2xl bg-[#eee5d8] flex justify-center items-center">
+
+
+<i class="fa-solid fa-circle-info text-[#7b6042]"></i>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<h4 class="font-black text-stone-800">
+
+راهنما
+
+</h4>
+
+
+<p class="text-xs text-stone-500 mt-1 leading-5">
+
+رمز پویا و کد امنیتی را قبل از پرداخت بررسی کنید.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<footer class="px-6 pb-6 pt-8">
+
+
+<div class="rounded-[32px] overflow-hidden bg-gradient-to-br from-[#241d17] via-[#554333] to-[#a88762] shadow-[0_25px_70px_rgba(0,0,0,.2)]">
+
+
+
+<div class="px-6 py-8 flex flex-col items-center">
+
+
+
+<div class="w-28 h-28 rounded-full p-1 bg-gradient-to-r from-[#fff7ed] via-[#d6b98c] to-[#8b6b45]">
+
+
+<img src="img/file_000000001a2481f4a0b43593d9131c72.jpg"
+
+class="w-full h-full rounded-full object-cover border-4 border-[#332820]">
+
+
+</div>
+
+
+
+
+
+<h2 class="mt-5 text-white text-2xl font-black">
+
+PORIA DEV
+
+</h2>
+
+
+
+
+<p class="mt-2 text-stone-200 text-sm">
+
+Front-End Developer
+
+</p>
+
+
+
+
+<div class="flex gap-3 mt-7">
+
+
+<a href="https://github.com/poria-dev"
+
+class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+
+
+<i class="fa-brands fa-github"></i>
+
+
+</a>
+
+
+
+<a href="https://linkedin.com/in/pooria-rezaee"
+
+class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+
+
+<i class="fa-brands fa-linkedin-in"></i>
+
+
+</a>
+
+
+
+<a href="https://t.me/pori_07"
+
+class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+
+
+<i class="fa-brands fa-telegram"></i>
+
+
+</a>
+
+
+</div>
+
+<div class="w-full h-px bg-white/20 my-8"></div>
+
+
+
+<div class="grid grid-cols-3 gap-3 w-full">
+
+
+<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center">
+
+
+<h3 class="text-white font-black text-lg">
+
+256
+
+</h3>
+
+
+<p class="text-[10px] text-stone-200 mt-2">
+
+Encryption
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center">
+
+
+<h3 class="text-white font-black text-lg">
+
+SSL
+
+</h3>
+
+
+<p class="text-[10px] text-stone-200 mt-2">
+
+Certificate
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center">
+
+
+<h3 class="text-white font-black text-lg">
+
+100%
+
+</h3>
+
+
+<p class="text-[10px] text-stone-200 mt-2">
+
+Secure
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<p class="text-center text-xs text-stone-300 mt-8 leading-6">
+
+
+تمام اطلاعات کارت و تراکنش شما با امنیت بالا پردازش می‌شود و اطلاعات حساس ذخیره نخواهد شد.
+
+
+</p>
+
+
+
+
+
+<div class="mt-6 px-5 py-4 rounded-2xl bg-white/10 border border-white/20 flex justify-center items-center gap-3">
+
+
+<i class="fa-solid fa-lock text-amber-300"></i>
+
+
+<span class="text-white text-sm font-bold">
+
+© 2026 Premium Payment Gateway
+
+</span>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
 
 </footer>
 
 
 
+
+
+</section>
+
+
+
+
+
+<div id="toast"
+
+class="fixed top-5 right-5 translate-x-[450px] opacity-0 duration-500 z-[9999]">
+
+
+<div id="toastBox"
+
+class="w-[340px] max-w-[90vw] rounded-[28px] bg-white border border-stone-200 shadow-[0_20px_60px_rgba(0,0,0,.15)] overflow-hidden">
+
+
+<div class="flex items-center p-5">
+
+
+<div id="toastIcon"
+
+class="w-14 h-14 rounded-2xl bg-[#eee5d8] flex items-center justify-center">
+
+
+<i class="fa-solid fa-check text-[#7b6042]"></i>
+
+
+</div>
+
+
+
+
+
+<div class="mr-4">
+
+
+<h3 id="toastTitle"
+
+class="font-black text-stone-800">
+
+
+</h3>
+
+
+
+
+<p id="toastText"
+
+class="text-xs text-stone-500 mt-2">
+
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="h-[5px] bg-[#eee5d8]">
+
+
+<div id="toastProgress"
+
+class="h-full w-full bg-gradient-to-r from-[#5b4630] to-[#b08b60]">
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
 </body>
+
+
 <script src="app.js"></script>
+
+
 </html>

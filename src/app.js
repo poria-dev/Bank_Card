@@ -8,13 +8,22 @@ const cvv2input = document.getElementById("cvv2input")
 const monthinput = document.getElementById("monthinput")
 const yearsinput = document.getElementById("yearsinput")
 const check = document.getElementById("check")
-const otpInputs = document.querySelectorAll(".otp-inp")
+const otpInput = document.querySelector(".otpInput")
 const submitOtpBtn = document.getElementById("submitOtp")
+const pas = document.getElementById("pas")
+
+const captchaInput = document.getElementById("captchaInput")
+const captchaRefresh = document.getElementById("captchaRefresh")
+const captchaBox = document.getElementById("captchaBox")
+
+
 
 
 let f = ''
 let timer = 60
 let arr = []
+let i = null
+let flag = 0
 
 // selects --------------
 
@@ -254,34 +263,9 @@ function showToast(type, title, text) {
 }
 
 
-otpInputs.forEach((input, index) => {
-
-    input.addEventListener("input", (e) => {
-        
-        let value = e.target.value;
-        
-        if (!/^\d*$/.test(value)) {
-            input.value = "";
-            return;
-        }
-
-        if (value.length === 1 && index < otpInputs.length - 1) {
-            otpInputs[index + 1].focus();
-        }
-    });
-
-    input.addEventListener("keydown", (e) => {
-        if (e.key === "Backspace" && !input.value && index > 0) {
-            otpInputs[index - 1].focus();
-        }
-    });
-
-});
-
-
 submitOtpBtn.addEventListener("click", () => {
 
-    let flag = 0
+    flag = 0
 
     inpnumber.forEach((val) => {
 
@@ -323,22 +307,7 @@ submitOtpBtn.addEventListener("click", () => {
         flag++
     }
 
-    let otpValid = true
-    otpInputs.forEach(inp => {
-        if (inp.value.length === 1) {
-            inp.style.border = "2px solid #22c55e"
-        } else {
-            inp.style.border = "2px solid #ef4444"
-            otpValid = false
-        }
-    })
-
-    if (!otpValid) {
-        showToast("error", "خطا در رمز پویا", "لطفاً رمز پویای ۵ رقمی را به درستی وارد کنید.")
-        return
-    } else {
-        flag++
-    }
+    safe()
 
     if (flag >= 8) {
 
@@ -363,6 +332,75 @@ submitOtpBtn.addEventListener("click", () => {
     } else {
         showToast("error", "اطلاعات ناقص", "لطفاً تمامی فیلدهای کارت بانکی و رمز پویا را تکمیل کنید.")
     }
+
+})
+
+
+
+// this is about captcha .............
+
+captchaRefresh.addEventListener("click", (e) => {
+
+    i = parseInt(Math.random() * 9001) + 1000
+
+    captchaBox.innerHTML = i
+
+    safe()
+})
+
+captchaInput.addEventListener("input", () => {
+
+    safe()
+
+})
+
+function safe() {
+
+    let val = captchaInput.value
+
+    if (val == i) {
+
+        captchaInput.style.border = "1px solid green"
+        flag++
+        console.log(flag);
+
+        pas.removeAttribute("disabled")
+
+    } else {
+        captchaInput.style.border = "1px solid red"
+
+        pas.setAttribute("disabled", "disabled")
+
+    }
+}
+
+
+pas.setAttribute("disabled", "disabled")
+pas.addEventListener("click", () => {
+
+
+    let timer = 30
+
+    pas.setAttribute("disabled", "disabled")
+
+
+    let x = setInterval(() => {
+        timer--
+        pas.innerHTML = timer
+
+        if (timer <= 0) {
+            clearInterval(x)
+
+            setTimeout(() => {
+
+                pas.innerHTML = "دریافت رمز"
+                captchaInput.value = ""
+                captchaInput.style.border = "1px solid red"
+
+            }, 300);
+        }
+    }, 500);
+
 
 })
 
