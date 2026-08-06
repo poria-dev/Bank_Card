@@ -28,7 +28,7 @@ Modern UI • Live Card Preview • Responsive • Secure • Interactive
 ## 📸 Preview
 
 <p align="center">
-<img src="file_00000000a020820a955fb9ebf651dd75.png" width="950">
+<img src="src/img/file_00000000a020820a955fb9ebf651dd75.png" width="950">
 </p>
 
 ---
