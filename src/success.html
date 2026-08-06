@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>پرداخت موفق</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Vazirmatn, sans-serif;
+        }
+
+        body {
+
+            background: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+
+        }
+
+        .box {
+
+            width: 100%;
+            max-width: 470px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 35px 28px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, .08);
+
+        }
+
+        .icon {
+
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: #eafaf0;
+            margin: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 42px;
+            color: #18b45b;
+
+            animation: pop .5s ease;
+
+        }
+
+        @keyframes pop {
+
+            0% {
+
+                transform: scale(.5);
+                opacity: 0;
+
+            }
+
+            100% {
+
+                transform: scale(1);
+                opacity: 1;
+
+            }
+
+        }
+
+        h1 {
+
+            margin-top: 18px;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            color: #222;
+
+        }
+
+        .desc {
+
+            text-align: center;
+            margin-top: 8px;
+            color: #666;
+            font-size: 14px;
+            line-height: 28px;
+
+        }
+
+        .line {
+
+            height: 1px;
+            background: #ececec;
+            margin: 28px 0;
+
+        }
+
+        .item {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px 0;
+
+        }
+
+        .title {
+
+            color: #777;
+            font-size: 15px;
+
+        }
+
+        .value {
+
+            font-weight: 600;
+            color: #222;
+            font-size: 15px;
+
+        }
+
+        .price {
+
+            color: #18b45b;
+            font-size: 18px;
+
+        }
+
+        .notice {
+
+            margin-top: 25px;
+            background: #f7f8fb;
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 14px;
+            color: #666;
+            line-height: 28px;
+            text-align: center;
+
+        }
+
+        button {
+
+            margin-top: 28px;
+            width: 100%;
+            height: 54px;
+            border: none;
+            border-radius: 14px;
+            background: #16a34a;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+
+        }
+
+        button:hover {
+
+            background: #14833d;
+
+        }
+
+        @media(max-width:500px) {
+
+            .box {
+
+                padding: 25px 20px;
+
+            }
+
+            h1 {
+
+                font-size: 24px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <div class="icon">
+            ✓
+        </div>
+
+        <h1>
+            پرداخت با موفقیت انجام شد
+        </h1>
+
+        <p class="desc">
+            تراکنش شما با موفقیت ثبت شد.
+        </p>
+
+        <div class="line"></div>
+
+        <div class="item">
+
+            <span class="title">
+                مبلغ پرداخت
+            </span>
+
+            <span class="value price">
+                1,250,000 تومان
+            </span>
+
+        </div>
+
+        <div class="item">
+
+            <span class="title">
+                شماره پیگیری
+            </span>
+
+            <span class="value">
+                7819542631
+            </span>
+
+        </div>
+
+        <div class="item">
+
+            <span class="title">
+                شماره کارت
+            </span>
+
+            <span class="value" id="card" dir="ltr">
+                6037 •••• •••• 2548
+            </span>
+
+        </div>
+
+        <div class="item">
+
+            <span class="title">
+                تاریخ
+            </span>
+
+            <span class="value" id="date">
+                
+            </span>
+
+        </div>
+
+        <div class="item">
+
+            <span class="title">
+                ساعت
+            </span>
+
+            <span class="value" id="time">
+                
+            </span>
+
+        </div>
+
+        <div class="notice">
+
+            اطلاعات پرداخت در سیستم ثبت شد. در صورت نیاز، شماره پیگیری را برای مراجعات بعدی نزد خود نگه دارید.
+
+        </div>
+
+        <button id="btn">
+            بازگشت به فروشگاه
+        </button>
+
+    </div>
+
+</body>
+
+<script src="success.js"></script>
+
+</html>
