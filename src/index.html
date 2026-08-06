@@ -13,6 +13,70 @@
 
 <link rel="stylesheet" href="output.css">
 
+<style>
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+.sec{
+    width:100%;
+}
+
+@media(max-width:430px){
+
+body{
+    padding-left:10px !important;
+    padding-right:10px !important;
+}
+
+.sec{
+    max-width:100% !important;
+    border-radius:24px !important;
+}
+
+.card{
+    height:165px !important;
+}
+
+.card h2{
+    font-size:15px !important;
+    letter-spacing:2px !important;
+}
+
+}
+
+@media(max-width:360px){
+
+.card{
+    height:150px !important;
+}
+
+.card h2{
+    font-size:13px !important;
+}
+
+input{
+    font-size:14px !important;
+}
+
+}
+
+@media(min-width:768px){
+
+.sec{
+    max-width:520px !important;
+}
+
+}
+
+</style>
+
 </head>
 
 
@@ -33,14 +97,14 @@
 
 
 
-<div class="relative z-10 flex justify-between items-start">
+<div class="relative z-10 flex justify-between items-start flex-wrap gap-4">
 
 
 
-<div class="flex items-center gap-3">
+<div class="flex items-center gap-3 min-w-0">
 
 
-<div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 flex items-center justify-center">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 flex items-center justify-center">
 
 
 <i class="fa-solid fa-building-columns text-white text-xl"></i>
@@ -51,10 +115,10 @@
 
 
 
-<div>
+<div class="min-w-0">
 
 
-<h2 class="text-white font-black text-lg">
+<h2 class="text-white font-black text-lg truncate">
 
 درگاه پرداخت امن
 
@@ -76,7 +140,7 @@ Premium Secure Payment
 
 
 
-<div class="text-left">
+<div class="text-left mr-auto">
 
 
 <p class="text-stone-300 text-[11px]">
@@ -114,9 +178,7 @@ Premium Secure Payment
 
 <div class="card relative w-full h-[190px] rounded-[30px] overflow-hidden bg-gradient-to-br from-[#171513] via-[#3c332b] to-[#9b7b55] shadow-[0_25px_70px_rgba(0,0,0,.4)]">
 
-
-
-<div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/20"></div>
 
 
 <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-amber-200/20 blur-3xl"></div>
@@ -124,10 +186,10 @@ Premium Secure Payment
 
 
 
-<div class="absolute top-5 right-5 flex items-center gap-3">
+<div class="absolute top-5 right-5 flex items-center gap-3 max-w-[80%]">
 
 
-<div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
+<div class="w-12 h-12 shrink-0 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
 
 
 <i class="fa-solid fa-gem text-amber-200"></i>
@@ -137,10 +199,10 @@ Premium Secure Payment
 
 
 
-<div>
+<div class="min-w-0">
 
 
-<h3 class="text-white font-black">
+<h3 class="text-white font-black truncate">
 
 Premium Card
 
@@ -279,33 +341,30 @@ class="text-white font-black text-base">
 
 
 
-<div class="flex gap-2" dir="ltr">
+<div class="flex gap-2 w-full" dir="ltr">
 
 
-<input type="text" maxlength="4" class="inp w-1/4 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
+<input type="text" maxlength="4" class="inp w-1/4 min-w-0 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
 
 
-<input type="text" maxlength="4" class="inp w-1/4 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
+<input type="text" maxlength="4" class="inp w-1/4 min-w-0 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
 
 
-<input type="text" maxlength="4" class="inp w-1/4 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
+<input type="text" maxlength="4" class="inp w-1/4 min-w-0 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
 
 
-<input type="text" maxlength="4" class="inp w-1/4 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
-
-
-</div>
+<input type="text" maxlength="4" class="inp w-1/4 min-w-0 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center text-lg font-black outline-none focus:bg-white focus:border-[#9b7b55] duration-300" placeholder="----">
 
 
 </div>
 
 
-
+</div>
 
 <div class="grid grid-cols-2 gap-4 mt-6">
 
 
-<div>
+<div class="min-w-0">
 
 
 <label class="block text-[13px] font-black text-stone-700 mb-3">
@@ -330,7 +389,7 @@ placeholder="****">
 
 
 
-<div>
+<div class="min-w-0">
 
 
 <label class="block text-[13px] font-black text-stone-700 mb-3">
@@ -347,7 +406,7 @@ placeholder="****">
 
 maxlength="2"
 
-class="w-1/2 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center font-black outline-none focus:border-[#9b7b55]"
+class="w-1/2 min-w-0 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center font-black outline-none focus:border-[#9b7b55]"
 
 placeholder="MM">
 
@@ -363,7 +422,7 @@ placeholder="MM">
 
 maxlength="2"
 
-class="w-1/2 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center font-black outline-none focus:border-[#9b7b55]"
+class="w-1/2 min-w-0 h-14 rounded-2xl border border-stone-200 bg-stone-50 text-center font-black outline-none focus:border-[#9b7b55]"
 
 placeholder="YY">
 
@@ -377,16 +436,19 @@ placeholder="YY">
 </div>
 
 
+
+
+
 <div class="mt-6 rounded-[28px] border border-stone-200 bg-gradient-to-br from-[#faf8f5] to-[#f0ebe3] px-2 py-5">
 
 
 <div class="flex justify-between items-center">
 
 
-<div class="flex items-center gap-3">
+<div class="flex items-center gap-3 min-w-0">
 
 
-<div class="w-12 h-12 rounded-2xl bg-[#e9dfd1] flex justify-center items-center">
+<div class="w-12 h-12 shrink-0 rounded-2xl bg-[#e9dfd1] flex justify-center items-center">
 
 
 <i class="fa-solid fa-shield-halved text-[#7b6042]"></i>
@@ -396,7 +458,7 @@ placeholder="YY">
 
 
 
-<div>
+<div class="min-w-0">
 
 
 <h3 class="font-black text-stone-800">
@@ -437,10 +499,10 @@ placeholder="YY">
 
 
 
-<div class="flex gap-2">
+<div class="flex gap-2 w-full">
 
 
-<div id="captchaBox" class="w-[80px] lg:w-[120px] px-2 h-14 rounded-2xl bg-[#2b241e] border text-[15px] border-stone-300 flex items-center justify-center text-white font-black tracking-[5px]">
+<div id="captchaBox" class="shrink-0 w-[80px] sm:w-[120px] px-2 h-14 rounded-2xl bg-[#2b241e] border text-[15px] border-stone-300 flex items-center justify-center text-white font-black tracking-[5px]">
 
 
 A8K2P
@@ -451,7 +513,7 @@ A8K2P
 
 
 
-<button id="captchaRefresh" class="w-12 lg:w-14 h-14 rounded-2xl bg-white border border-stone-200 flex items-center justify-center hover:bg-stone-100 duration-300">
+<button id="captchaRefresh" class="shrink-0 w-12 sm:w-14 h-14 rounded-2xl bg-white border border-stone-200 flex items-center justify-center hover:bg-stone-100 duration-300">
 
 
 <i class="fa-solid fa-rotate-right text-[#7b6042] text-[10px]"></i>
@@ -465,7 +527,7 @@ A8K2P
 
 <input type="text" id="captchaInput"
 
-class="flex-1 h-14 rounded-2xl border border-stone-200 bg-white text-center font-black outline-none focus:border-[#9b7b55]"
+class="flex-1 min-w-0 h-14 rounded-2xl border border-stone-200 bg-white text-center font-black outline-none focus:border-[#9b7b55]"
 
 placeholder="کد امنیتی">
 
@@ -474,8 +536,6 @@ placeholder="کد امنیتی">
 
 
 </div>
-
-
 
 
 <div class="mt-6">
@@ -490,18 +550,18 @@ placeholder="کد امنیتی">
 
 
 
-<div class="flex gap-2">
+<div class="flex gap-2 w-full">
 
 
 <input id="otpInput" type="password"
 
-class="flex-1 h-14 rounded-2xl border border-stone-200 bg-white text-center text-lg font-black outline-none focus:border-[#9b7b55]"
+class="flex-1 min-w-0 h-14 rounded-2xl border border-stone-200 bg-white text-center text-lg font-black outline-none focus:border-[#9b7b55]"
 
 placeholder="رمز پویا">
 
 
 
-<button id="pas" class="min-w-[80px] lg:min-w-[120px] cursor-pointer text-md lg:text-xl h-14 rounded-2xl bg-gradient-to-r from-[#4b3a2b] to-[#a5835c] text-white font-black shadow-lg active:scale-95 duration-300">
+<button id="pas" class="shrink-0 min-w-[80px] sm:min-w-[120px] cursor-pointer text-md lg:text-xl h-14 rounded-2xl bg-gradient-to-r from-[#4b3a2b] to-[#a5835c] text-white font-black shadow-lg active:scale-95 duration-300">
 
 
 دریافت رمز
@@ -526,10 +586,10 @@ placeholder="رمز پویا">
 <div class="mt-6 rounded-[28px] border border-stone-200 bg-white p-5">
 
 
-<div class="flex justify-between items-center">
+<div class="flex justify-between items-center gap-3">
 
 
-<div>
+<div class="min-w-0">
 
 
 <h3 class="font-black text-stone-800">
@@ -550,7 +610,7 @@ placeholder="رمز پویا">
 
 
 
-<div class="w-12 h-12 rounded-2xl bg-[#eee5d8] flex items-center justify-center">
+<div class="w-12 h-12 shrink-0 rounded-2xl bg-[#eee5d8] flex items-center justify-center">
 
 
 <i class="fa-solid fa-lock text-[#7b6042]"></i>
@@ -564,16 +624,16 @@ placeholder="رمز پویا">
 
 
 
-<div class="grid grid-cols-3 gap-3 mt-5">
+<div class="grid grid-cols-3 gap-2 sm:gap-3 mt-5">
 
 
-<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center">
+<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center min-w-0">
 
 
 <i class="fa-solid fa-fingerprint text-[#7b6042]"></i>
 
 
-<span class="text-[11px] font-black mt-2">
+<span class="text-[10px] sm:text-[11px] font-black mt-2">
 
 Secure
 
@@ -584,13 +644,13 @@ Secure
 
 
 
-<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center">
+<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center min-w-0">
 
 
 <i class="fa-solid fa-credit-card text-[#7b6042]"></i>
 
 
-<span class="text-[11px] font-black mt-2">
+<span class="text-[10px] sm:text-[11px] font-black mt-2">
 
 Card
 
@@ -601,13 +661,13 @@ Card
 
 
 
-<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center">
+<div class="rounded-2xl bg-[#faf8f5] border border-stone-200 py-4 flex flex-col items-center min-w-0">
 
 
 <i class="fa-solid fa-lock text-[#7b6042]"></i>
 
 
-<span class="text-[11px] font-black mt-2">
+<span class="text-[10px] sm:text-[11px] font-black mt-2">
 
 SSL
 
@@ -623,8 +683,7 @@ SSL
 
 </div>
 
-
-<div class="flex justify-between items-center mt-6">
+<div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mt-6">
 
 
 <div class="flex items-center gap-3">
@@ -655,7 +714,7 @@ class="text-sm font-bold text-stone-700">
 
 
 
-<div class="px-3 py-2 rounded-xl bg-[#eee5d8] border border-stone-200">
+<div class="px-3 py-2 rounded-xl bg-[#eee5d8] border border-stone-200 self-start sm:self-auto">
 
 
 <span class="text-[11px] font-black text-[#7b6042]">
@@ -697,7 +756,7 @@ class="w-full h-16 mt-7 rounded-[24px] bg-gradient-to-r from-[#332820] via-[#6b5
 <div class="flex items-center gap-3">
 
 
-<div class="w-12 h-12 rounded-2xl bg-[#eee5d8] flex justify-center items-center">
+<div class="w-12 h-12 shrink-0 rounded-2xl bg-[#eee5d8] flex justify-center items-center">
 
 
 <i class="fa-solid fa-circle-info text-[#7b6042]"></i>
@@ -708,7 +767,7 @@ class="w-full h-16 mt-7 rounded-[24px] bg-gradient-to-r from-[#332820] via-[#6b5
 
 
 
-<div>
+<div class="min-w-0">
 
 
 <h4 class="font-black text-stone-800">
@@ -781,11 +840,7 @@ PORIA DEV
 Front-End Developer
 
 </p>
-
-
-
-
-<div class="flex gap-3 mt-7">
+<div class="flex gap-3 mt-7 flex-wrap justify-center">
 
 
 <a href="https://github.com/poria-dev"
@@ -829,10 +884,10 @@ class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-cente
 
 
 
-<div class="grid grid-cols-3 gap-3 w-full">
+<div class="grid grid-cols-3 gap-2 sm:gap-3 w-full">
 
 
-<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center">
+<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center min-w-0">
 
 
 <h3 class="text-white font-black text-lg">
@@ -854,7 +909,7 @@ Encryption
 
 
 
-<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center">
+<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center min-w-0">
 
 
 <h3 class="text-white font-black text-lg">
@@ -876,7 +931,7 @@ Certificate
 
 
 
-<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center">
+<div class="rounded-2xl bg-white/10 border border-white/10 py-5 flex flex-col items-center min-w-0">
 
 
 <h3 class="text-white font-black text-lg">
@@ -914,15 +969,15 @@ Secure
 
 
 
-<div class="mt-6 px-5 py-4 rounded-2xl bg-white/10 border border-white/20 flex justify-center items-center gap-3">
+<div class="mt-6 px-5 py-4 rounded-2xl bg-white/10 border border-white/20 flex flex-wrap justify-center items-center gap-3">
 
 
 <i class="fa-solid fa-lock text-amber-300"></i>
 
 
-<span class="text-white text-sm font-bold">
+<span class="text-white text-sm font-bold text-center">
 
-© 2026 Premium Payment Gateway
+©️ 2026 Premium Payment Gateway
 
 </span>
 
@@ -965,7 +1020,7 @@ class="w-[340px] max-w-[90vw] rounded-[28px] bg-white border border-stone-200 sh
 
 <div id="toastIcon"
 
-class="w-14 h-14 rounded-2xl bg-[#eee5d8] flex items-center justify-center">
+class="w-14 h-14 shrink-0 rounded-2xl bg-[#eee5d8] flex items-center justify-center">
 
 
 <i class="fa-solid fa-check text-[#7b6042]"></i>
@@ -977,12 +1032,12 @@ class="w-14 h-14 rounded-2xl bg-[#eee5d8] flex items-center justify-center">
 
 
 
-<div class="mr-4">
+<div class="mr-4 min-w-0">
 
 
 <h3 id="toastTitle"
 
-class="font-black text-stone-800">
+class="font-black text-stone-800 truncate">
 
 
 </h3>
