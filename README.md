@@ -28,7 +28,7 @@ Modern UI • Live Card Preview • Responsive • Secure • Interactive
 ## 📸 Preview
 
 <p align="center">
-<img src="file_00000000a020820a955fb9ebf651dd75.png" width="950">
+<img src="src/img/file_00000000a020820a955fb9ebf651dd75.png" width="950">
 </p>
 
 ---
@@ -37,7 +37,7 @@ Modern UI • Live Card Preview • Responsive • Secure • Interactive
 
 ### 🔗 Try it Here
 
-https://poria-dev.github.io/Bank-card-payment-gateway/src
+https://poria-dev.github.io/Bank_Card/src
 
 ---
 
