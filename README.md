@@ -37,7 +37,7 @@ Modern UI • Live Card Preview • Responsive • Secure • Interactive
 
 ### 🔗 Try it Here
 
-https://poria-dev.github.io/Bank-card-payment-gateway/src
+https://poria-dev.github.io/Bank_Card/src
 
 ---
 
